@@ -1,0 +1,36 @@
+<%- include('../cabecalho')%>
+    <div>
+        <h3>Paleontologistas</h3>
+        <p>Maiores paleontólogos da história da descoberta dos fosséis de dinossauro</p>
+        <a href="../paleontologo/add">+ Novo Paleontólogo</a>
+
+        <table>
+            <tr>
+                <td>
+                    <h3>Nome</h3>
+                </td>
+                <td>
+                    <h3>Nascimento</h3>
+                </td>
+                <td>
+                    <h3>Descoberta</h3>
+                </td>
+            </tr>
+            <%paleontologos.forEach(paleontologo=>{%>
+                <tr>
+                    <td>
+                        <%=paleontologo.nome%>
+                    </td>
+                    <td>
+                        <%=paleontologo.nascimento%>
+                    </td>
+                    <td>
+                        <%=paleontologo.descoberta%>
+                    </td>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    </body>
+
+    </html>

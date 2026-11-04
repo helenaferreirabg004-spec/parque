@@ -1,0 +1,44 @@
+<%- include('../cabecalho')%>
+    <div>
+        <tr><a href="../dinossauro"> ← Voltar </a></tr>
+        <h3>Alterar Dinossauro</h3>
+        <form method="POST">
+            <P>id</P>
+            <input type="hidden" name="id" value="<%=dinossauro.id%>">
+            <p>Nome</p>
+            <input type="text" placeholder="Nome do dinossauro..." name="nome" value="<%=dinossauro.nome%>">
+            <p>Espécie</p>
+            <select name="especie" value="<%=dinossauro.especie%>">
+                <option value="">Selecione...</option>
+                <option value="Theropoda">Theropoda</option>
+                <option value="Sauropoda">Sauropoda</option>
+                <option value="Ceratopsia">Ceratopsia</option>
+                <option value="Ornithopoda">Ornithopoda</option>
+            </select>
+            <br>
+            <p>Descrição</p>
+            <textarea placeholder="Descrição detalhada do dinossauro..." name="descricao"
+                value="<%=dinossauro.descricao%>"></textarea>
+            <br>
+            <p>Altura (metros)</p>
+            <input type="number" value="0" name="altura" value="<%=dinossauro.altura%>">
+            <p>Peso (toneladas)</p>
+            <input type="number" value="0" name="peso" value="<%=dinossauro.peso%>">
+            <p>Ano de Descoberta</p>
+            <input type="number" value="2026" name="anoDescoberta" value="<%=dinossauro.anoDescoberta%>">
+            <br>
+            <p>Dieta</p>
+            <select name="dieta" value="<%=dinossauro.dieta%>">
+                <option value="">Selecione...</option>
+                <option value="Carnívoro">Carnívoro</option>
+                <option value="Herbívoro">Herbívoro</option>
+                <option value="Onívoro">Onívoro</option>
+            </select>
+            <br><br>
+            <button type="submit">Adicionar</button>
+            <button type="reset">Cancelar</button>
+        </form>
+    </div>
+    </body>
+
+    </html>
