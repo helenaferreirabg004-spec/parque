@@ -92,6 +92,25 @@ app.post('/paleontologo/add', async (req, res) => {
     await Paleontologo.create({nome,nascimento,descoberta})
     res.render("paleontologo/add");
 })
+
+app.get('/paleontologo/upd/:id', async (req, res) => {
+    const paleontologo = await Paleontologo.findById(req.params.id)
+    res.render("paleontologo/upd", {paleontologo})
+})
+
+app.post('/paleontologo/upd/:id', async (req, res) => {
+    const {nome,nascimento,descoberta} = req.body
+    await Paleontologo.findByIdAndUpdate(req.params.id,{nome,nascimento,descoberta})
+    const paleontologos = await Paleontologo.find()
+    res.render("paleontologo/lst", {paleontologos})
+})
+
+app.get('/paleontologo/del/:id', async (req, res) => {
+    await Paleontologo.findByIdAndDelete(req.params.id)
+    const paleontologos = await Paleontologo.find()
+    res.render("paleontologo/lst", {paleontologos})
+})
+
 app.listen(PORT, () => {
     console.log(`servidor rodando em http://localhost:${PORT}`);
 });

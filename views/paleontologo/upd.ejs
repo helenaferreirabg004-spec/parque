@@ -1,0 +1,16 @@
+<h1>Atualizar Paleontólogo</h1>
+
+<form action="/paleontologo/upd/<%= paleontologo._id %>" method="POST">
+
+    <label>Nome:</label>
+    <input type="text" name="nome" value="<%= paleontologo.nome %>">
+
+    <label>Nascimento:</label>
+    <input type="text" name="nascimento" value="<%= paleontologo.nascimento %>">
+
+    <label>Descoberta:</label>
+    <input type="text" name="descoberta" value="<%= paleontologo.descoberta %>">
+
+    <button type="submit">Atualizar</button>
+
+</form>
